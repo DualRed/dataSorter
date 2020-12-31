@@ -1,0 +1,7 @@
+.doc
+.docm
+.docx
+.dot
+.dotx
+.txt
+.csv
