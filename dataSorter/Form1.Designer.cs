@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.gbPath = new System.Windows.Forms.GroupBox();
             this.btBrowse = new System.Windows.Forms.Button();
             this.txtPath = new System.Windows.Forms.TextBox();
             this.btSort = new System.Windows.Forms.Button();
-            this.logo = new System.Windows.Forms.PictureBox();
             this.gbLogic = new System.Windows.Forms.GroupBox();
             this.lvStatus = new System.Windows.Forms.ListView();
             this.statusHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btSetting = new System.Windows.Forms.Button();
             this.btAbout = new System.Windows.Forms.Button();
             this.folderBrowser = new System.Windows.Forms.FolderBrowserDialog();
+            this.logo = new System.Windows.Forms.PictureBox();
             this.gbPath.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.gbLogic.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
             // gbPath
@@ -87,16 +88,6 @@
             this.btSort.UseVisualStyleBackColor = true;
             this.btSort.Click += new System.EventHandler(this.btSort_Click);
             // 
-            // logo
-            // 
-            this.logo.Image = global::dataSorter.Properties.Resources.logo;
-            this.logo.Location = new System.Drawing.Point(12, 12);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(209, 96);
-            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.logo.TabIndex = 1;
-            this.logo.TabStop = false;
-            // 
             // gbLogic
             // 
             this.gbLogic.Controls.Add(this.lvStatus);
@@ -111,6 +102,7 @@
             // 
             this.lvStatus.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.statusHeader});
+            this.lvStatus.FullRowSelect = true;
             this.lvStatus.GridLines = true;
             this.lvStatus.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvStatus.HideSelection = false;
@@ -147,6 +139,16 @@
             this.btAbout.UseVisualStyleBackColor = true;
             this.btAbout.Click += new System.EventHandler(this.btAbout_Click);
             // 
+            // logo
+            // 
+            this.logo.Image = global::dataSorter.Properties.Resources.logo;
+            this.logo.Location = new System.Drawing.Point(12, 12);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(209, 96);
+            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logo.TabIndex = 1;
+            this.logo.TabStop = false;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,6 +159,8 @@
             this.Controls.Add(this.gbLogic);
             this.Controls.Add(this.logo);
             this.Controls.Add(this.gbPath);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(500, 450);
             this.MinimumSize = new System.Drawing.Size(500, 450);
@@ -166,8 +170,8 @@
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.gbPath.ResumeLayout(false);
             this.gbPath.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.gbLogic.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
 
         }

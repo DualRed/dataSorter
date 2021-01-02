@@ -166,13 +166,13 @@ namespace dataSorter
         private void btSetting_Click(object sender, EventArgs e)
         {
             SettingForm setting = new SettingForm();
-            setting.Show();
+            setting.ShowDialog();
         }
 
         private void btAbout_Click(object sender, EventArgs e)
         {
             AboutForm about = new AboutForm();
-            about.Show();
+            about.ShowDialog();
         }
     }
 }
