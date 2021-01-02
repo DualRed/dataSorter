@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace dataSorter
 {
-    public partial class PictureForm : Form
+    public partial class SettingForm : Form
     {
-        public PictureForm()
+        public SettingForm()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace dataSorter
 {
-    partial class VideoForm
+    partial class SettingForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,18 +30,19 @@
         {
             this.SuspendLayout();
             // 
-            // VideoForm
+            // SettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Name = "VideoForm";
+            this.Name = "SettingForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Video...";
+            this.Text = "Settings";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
     }
 }

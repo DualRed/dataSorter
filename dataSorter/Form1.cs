@@ -14,11 +14,11 @@ namespace dataSorter
 {
     public partial class mainForm : Form
     {
-        string doc = "Documents";
-        string music = "Musics";
-        string pic = "Pictures";
-        string vid = "Videos";
-        string app = "Programs";
+        string docName = "Documents";
+        string musicName = "Musics";
+        string picName = "Pictures";
+        string vidName = "Videos";
+        string appName = "Programs";
 
         public mainForm()
         {
@@ -29,11 +29,11 @@ namespace dataSorter
         {
             string endPath = txtPath.Text;
 
-            string docfolder = System.IO.Path.Combine(endPath, doc);
-            string musicfolder = System.IO.Path.Combine(endPath, music);
-            string picfolder = System.IO.Path.Combine(endPath, pic);
-            string vidfolder = System.IO.Path.Combine(endPath, vid);
-            string appfolder = System.IO.Path.Combine(endPath, app);
+            string docfolder = System.IO.Path.Combine(endPath, docName);
+            string musicfolder = System.IO.Path.Combine(endPath, musicName);
+            string picfolder = System.IO.Path.Combine(endPath, picName);
+            string vidfolder = System.IO.Path.Combine(endPath, vidName);
+            string appfolder = System.IO.Path.Combine(endPath, appName);
 
             System.IO.Directory.CreateDirectory(docfolder);
             System.IO.Directory.CreateDirectory(musicfolder);
@@ -46,7 +46,11 @@ namespace dataSorter
         {
             string endPath = txtPath.Text;
 
-            string[] docEx = {".doc", ".docx", ".txt"};
+            string[] docEx = {".doc", ".docx", ".txt", ".csv"};
+            string[] musicEx = { ".mp3", ".ogg", ".wma", ".wav", ".flac", ".aac", ".aiff", ".alac", ".amr"};
+            string[] picEx = {".jpg", ".jpeg", ".png", ".bmp", ".gif"};
+            string[] vidEx = {".mp4", ".avi", ".flv", ".wmv", ".mov"};
+            string[] appEx = {".exe", ".msi", ".iso", ".zip", ".rar"};
 
             var files = from file in Directory.EnumerateFiles(endPath)
                         select file;
@@ -54,10 +58,15 @@ namespace dataSorter
             foreach (var file in files)
             {
                 string fileName = Path.GetFileName(file);
-                string desName = endPath + @"\Documents" + @"\" + fileName;
+                string docPath = endPath + @"\Documents" + @"\" + fileName;
+                string musicPath = endPath + @"\Musics" + @"\" + fileName;
+                string picPath = endPath + @"\Pictures" + @"\" + fileName;
+                string vidPath = endPath + @"\Videos" + @"\" + fileName;
+                string appPath = endPath + @"\Programs" + @"\" + fileName;
+
                 foreach (var doc in docEx)
                 {
-                    if(File.Exists(desName))
+                    if(File.Exists(docPath))
                     {
                        
                     }
@@ -65,40 +74,82 @@ namespace dataSorter
                     {
                         if (file.Contains(doc))
                         {
-                            System.IO.File.Move(file, desName);
+                            System.IO.File.Move(file, docPath);
+                            lvStatus.Items.Add("Moved [" + fileName + "] to [" + docName + "] folder.");
+                        }
+                    }
+                }
+
+                foreach (var music in musicEx)
+                {
+                    if (File.Exists(musicPath))
+                    {
+
+                    }
+                    else
+                    {
+                        if (file.Contains(music))
+                        {
+                            System.IO.File.Move(file, musicPath);
+                            lvStatus.Items.Add("Moved [" + fileName + "] to [" + musicName + "] folder.");
+                        }
+                    }
+                }
+
+                foreach (var pic in picEx)
+                {
+                    if (File.Exists(picPath))
+                    {
+
+                    }
+                    else
+                    {
+                        if (file.Contains(pic))
+                        {
+                            System.IO.File.Move(file, picPath);
+                            lvStatus.Items.Add("Moved [" + fileName + "] to [" + picName + "] folder.");
+                        }
+                    }
+                }
+
+                foreach (var vid in vidEx)
+                {
+                    if (File.Exists(vidPath))
+                    {
+
+                    }
+                    else
+                    {
+                        if (file.Contains(vid))
+                        {
+                            System.IO.File.Move(file, vidPath);
+                            lvStatus.Items.Add("Moved [" + fileName + "] to [" + vidName + "] folder.");
+                        }
+                    }
+                }
+
+                foreach (var app in appEx)
+                {
+                    if (File.Exists(appPath))
+                    {
+
+                    }
+                    else
+                    {
+                        if (file.Contains(app))
+                        {
+                            System.IO.File.Move(file, appPath);
+                            lvStatus.Items.Add("Moved [" + fileName + "] to [" + appName + "] folder.");
                         }
                     }
                 }
             }
         }
 
-        private void btDocument_Click(object sender, EventArgs e)
-        {
-            DocForm docForm = new DocForm();
-            docForm.Show();
-        }
-
-        private void btPicture_Click(object sender, EventArgs e)
-        {
-            PictureForm picForm = new PictureForm();
-            picForm.Show();
-        }
-
-        private void btMusic_Click(object sender, EventArgs e)
-        {
-            MusicForm musicForm = new MusicForm();
-            musicForm.Show();
-        }
-
-        private void btVideo_Click(object sender, EventArgs e)
-        {
-            VideoForm vidForm = new VideoForm();
-            vidForm.Show();
-        }
-
         private void btBrowse_Click(object sender, EventArgs e)
         {
-
+            if (folderBrowser.ShowDialog() == DialogResult.OK)
+                txtPath.Text = folderBrowser.SelectedPath;
         }
 
         private void btSort_Click(object sender, EventArgs e)
@@ -109,7 +160,19 @@ namespace dataSorter
 
         private void mainForm_Load(object sender, EventArgs e)
         {
+            lvStatus.View = View.Details;
+        }
 
+        private void btSetting_Click(object sender, EventArgs e)
+        {
+            SettingForm setting = new SettingForm();
+            setting.Show();
+        }
+
+        private void btAbout_Click(object sender, EventArgs e)
+        {
+            AboutForm about = new AboutForm();
+            about.Show();
         }
     }
 }

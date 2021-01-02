@@ -31,18 +31,14 @@
             this.gbPath = new System.Windows.Forms.GroupBox();
             this.btBrowse = new System.Windows.Forms.Button();
             this.txtPath = new System.Windows.Forms.TextBox();
-            this.logo = new System.Windows.Forms.PictureBox();
             this.btSort = new System.Windows.Forms.Button();
+            this.logo = new System.Windows.Forms.PictureBox();
             this.gbLogic = new System.Windows.Forms.GroupBox();
-            this.btVideo = new System.Windows.Forms.Button();
-            this.lbVideo = new System.Windows.Forms.Label();
-            this.btPicture = new System.Windows.Forms.Button();
-            this.lbPicture = new System.Windows.Forms.Label();
-            this.btMusic = new System.Windows.Forms.Button();
-            this.lbMusic = new System.Windows.Forms.Label();
-            this.btDocument = new System.Windows.Forms.Button();
-            this.lbDocument = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lvStatus = new System.Windows.Forms.ListView();
+            this.statusHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btSetting = new System.Windows.Forms.Button();
+            this.btAbout = new System.Windows.Forms.Button();
+            this.folderBrowser = new System.Windows.Forms.FolderBrowserDialog();
             this.gbPath.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.gbLogic.SuspendLayout();
@@ -52,6 +48,7 @@
             // 
             this.gbPath.Controls.Add(this.btBrowse);
             this.gbPath.Controls.Add(this.txtPath);
+            this.gbPath.Controls.Add(this.btSort);
             this.gbPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbPath.Location = new System.Drawing.Point(12, 114);
             this.gbPath.Name = "gbPath";
@@ -63,10 +60,10 @@
             // btBrowse
             // 
             this.btBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBrowse.Location = new System.Drawing.Point(379, 17);
+            this.btBrowse.Location = new System.Drawing.Point(298, 17);
             this.btBrowse.Name = "btBrowse";
             this.btBrowse.Size = new System.Drawing.Size(75, 23);
-            this.btBrowse.TabIndex = 2;
+            this.btBrowse.TabIndex = 1;
             this.btBrowse.Text = "Browse";
             this.btBrowse.UseVisualStyleBackColor = true;
             this.btBrowse.Click += new System.EventHandler(this.btBrowse_Click);
@@ -76,9 +73,19 @@
             this.txtPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPath.Location = new System.Drawing.Point(6, 18);
             this.txtPath.Name = "txtPath";
-            this.txtPath.Size = new System.Drawing.Size(367, 21);
+            this.txtPath.Size = new System.Drawing.Size(286, 21);
             this.txtPath.TabIndex = 0;
-            this.txtPath.Text = "F:\\dataSorter-test";
+            // 
+            // btSort
+            // 
+            this.btSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSort.Location = new System.Drawing.Point(379, 17);
+            this.btSort.Name = "btSort";
+            this.btSort.Size = new System.Drawing.Size(75, 23);
+            this.btSort.TabIndex = 2;
+            this.btSort.Text = "Sort";
+            this.btSort.UseVisualStyleBackColor = true;
+            this.btSort.Click += new System.EventHandler(this.btSort_Click);
             // 
             // logo
             // 
@@ -90,131 +97,64 @@
             this.logo.TabIndex = 1;
             this.logo.TabStop = false;
             // 
-            // btSort
-            // 
-            this.btSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSort.Location = new System.Drawing.Point(391, 85);
-            this.btSort.Name = "btSort";
-            this.btSort.Size = new System.Drawing.Size(75, 23);
-            this.btSort.TabIndex = 3;
-            this.btSort.Text = "Sort";
-            this.btSort.UseVisualStyleBackColor = true;
-            this.btSort.Click += new System.EventHandler(this.btSort_Click);
-            // 
             // gbLogic
             // 
-            this.gbLogic.Controls.Add(this.listView1);
-            this.gbLogic.Controls.Add(this.btVideo);
-            this.gbLogic.Controls.Add(this.lbVideo);
-            this.gbLogic.Controls.Add(this.btPicture);
-            this.gbLogic.Controls.Add(this.lbPicture);
-            this.gbLogic.Controls.Add(this.btMusic);
-            this.gbLogic.Controls.Add(this.lbMusic);
-            this.gbLogic.Controls.Add(this.btDocument);
-            this.gbLogic.Controls.Add(this.lbDocument);
+            this.gbLogic.Controls.Add(this.lvStatus);
             this.gbLogic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbLogic.Location = new System.Drawing.Point(12, 175);
             this.gbLogic.Name = "gbLogic";
             this.gbLogic.Size = new System.Drawing.Size(460, 224);
             this.gbLogic.TabIndex = 4;
             this.gbLogic.TabStop = false;
-            this.gbLogic.Text = "Custom Sorter";
             // 
-            // btVideo
+            // lvStatus
             // 
-            this.btVideo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btVideo.Location = new System.Drawing.Point(339, 77);
-            this.btVideo.Name = "btVideo";
-            this.btVideo.Size = new System.Drawing.Size(75, 23);
-            this.btVideo.TabIndex = 10;
-            this.btVideo.Text = "Edit";
-            this.btVideo.UseVisualStyleBackColor = true;
-            this.btVideo.Click += new System.EventHandler(this.btVideo_Click);
+            this.lvStatus.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.statusHeader});
+            this.lvStatus.GridLines = true;
+            this.lvStatus.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lvStatus.HideSelection = false;
+            this.lvStatus.Location = new System.Drawing.Point(6, 20);
+            this.lvStatus.Name = "lvStatus";
+            this.lvStatus.Size = new System.Drawing.Size(448, 198);
+            this.lvStatus.TabIndex = 11;
+            this.lvStatus.UseCompatibleStateImageBehavior = false;
             // 
-            // lbVideo
+            // statusHeader
             // 
-            this.lbVideo.AutoSize = true;
-            this.lbVideo.Location = new System.Drawing.Point(260, 81);
-            this.lbVideo.Name = "lbVideo";
-            this.lbVideo.Size = new System.Drawing.Size(47, 15);
-            this.lbVideo.TabIndex = 9;
-            this.lbVideo.Text = "Videos:";
+            this.statusHeader.Text = "Status";
+            this.statusHeader.Width = 443;
             // 
-            // btPicture
+            // btSetting
             // 
-            this.btPicture.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPicture.Location = new System.Drawing.Point(339, 38);
-            this.btPicture.Name = "btPicture";
-            this.btPicture.Size = new System.Drawing.Size(75, 23);
-            this.btPicture.TabIndex = 8;
-            this.btPicture.Text = "Edit";
-            this.btPicture.UseVisualStyleBackColor = true;
-            this.btPicture.Click += new System.EventHandler(this.btPicture_Click);
+            this.btSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSetting.Location = new System.Drawing.Point(391, 12);
+            this.btSetting.Name = "btSetting";
+            this.btSetting.Size = new System.Drawing.Size(75, 23);
+            this.btSetting.TabIndex = 4;
+            this.btSetting.Text = "Settings";
+            this.btSetting.UseVisualStyleBackColor = true;
+            this.btSetting.Click += new System.EventHandler(this.btSetting_Click);
             // 
-            // lbPicture
+            // btAbout
             // 
-            this.lbPicture.AutoSize = true;
-            this.lbPicture.Location = new System.Drawing.Point(260, 42);
-            this.lbPicture.Name = "lbPicture";
-            this.lbPicture.Size = new System.Drawing.Size(54, 15);
-            this.lbPicture.TabIndex = 7;
-            this.lbPicture.Text = "Pictures:";
-            // 
-            // btMusic
-            // 
-            this.btMusic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btMusic.Location = new System.Drawing.Point(109, 77);
-            this.btMusic.Name = "btMusic";
-            this.btMusic.Size = new System.Drawing.Size(75, 23);
-            this.btMusic.TabIndex = 6;
-            this.btMusic.Text = "Edit";
-            this.btMusic.UseVisualStyleBackColor = true;
-            this.btMusic.Click += new System.EventHandler(this.btMusic_Click);
-            // 
-            // lbMusic
-            // 
-            this.lbMusic.AutoSize = true;
-            this.lbMusic.Location = new System.Drawing.Point(30, 81);
-            this.lbMusic.Name = "lbMusic";
-            this.lbMusic.Size = new System.Drawing.Size(43, 15);
-            this.lbMusic.TabIndex = 5;
-            this.lbMusic.Text = "Music:";
-            // 
-            // btDocument
-            // 
-            this.btDocument.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDocument.Location = new System.Drawing.Point(109, 38);
-            this.btDocument.Name = "btDocument";
-            this.btDocument.Size = new System.Drawing.Size(75, 23);
-            this.btDocument.TabIndex = 4;
-            this.btDocument.Text = "Edit";
-            this.btDocument.UseVisualStyleBackColor = true;
-            this.btDocument.Click += new System.EventHandler(this.btDocument_Click);
-            // 
-            // lbDocument
-            // 
-            this.lbDocument.AutoSize = true;
-            this.lbDocument.Location = new System.Drawing.Point(30, 42);
-            this.lbDocument.Name = "lbDocument";
-            this.lbDocument.Size = new System.Drawing.Size(73, 15);
-            this.lbDocument.TabIndex = 0;
-            this.lbDocument.Text = "Documents:";
-            // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(33, 121);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(381, 97);
-            this.listView1.TabIndex = 11;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.btAbout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAbout.Location = new System.Drawing.Point(310, 12);
+            this.btAbout.Name = "btAbout";
+            this.btAbout.Size = new System.Drawing.Size(75, 23);
+            this.btAbout.TabIndex = 3;
+            this.btAbout.Text = "About";
+            this.btAbout.UseVisualStyleBackColor = true;
+            this.btAbout.Click += new System.EventHandler(this.btAbout_Click);
             // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 411);
+            this.Controls.Add(this.btAbout);
+            this.Controls.Add(this.btSetting);
             this.Controls.Add(this.gbLogic);
-            this.Controls.Add(this.btSort);
             this.Controls.Add(this.logo);
             this.Controls.Add(this.gbPath);
             this.MaximizeBox = false;
@@ -228,7 +168,6 @@
             this.gbPath.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.gbLogic.ResumeLayout(false);
-            this.gbLogic.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -241,15 +180,11 @@
         private System.Windows.Forms.Button btBrowse;
         private System.Windows.Forms.Button btSort;
         private System.Windows.Forms.GroupBox gbLogic;
-        private System.Windows.Forms.Label lbDocument;
-        private System.Windows.Forms.Button btVideo;
-        private System.Windows.Forms.Label lbVideo;
-        private System.Windows.Forms.Button btPicture;
-        private System.Windows.Forms.Label lbPicture;
-        private System.Windows.Forms.Button btMusic;
-        private System.Windows.Forms.Label lbMusic;
-        private System.Windows.Forms.Button btDocument;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lvStatus;
+        private System.Windows.Forms.ColumnHeader statusHeader;
+        private System.Windows.Forms.Button btSetting;
+        private System.Windows.Forms.Button btAbout;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowser;
     }
 }
 
