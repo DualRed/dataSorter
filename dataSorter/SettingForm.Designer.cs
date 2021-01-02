@@ -31,30 +31,40 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabDocument = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btAdd = new System.Windows.Forms.Button();
+            this.btDelDoc = new System.Windows.Forms.Button();
+            this.btAddDoc = new System.Windows.Forms.Button();
             this.lvDocument = new System.Windows.Forms.ListView();
-            this.tabMusic = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.lvMusic = new System.Windows.Forms.ListView();
-            this.tabPicture = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.lvPicture = new System.Windows.Forms.ListView();
-            this.tabProgram = new System.Windows.Forms.TabPage();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.lvProgram = new System.Windows.Forms.ListView();
-            this.tabVideo = new System.Windows.Forms.TabPage();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.lvVideo = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabMusic = new System.Windows.Forms.TabPage();
+            this.btDelMusic = new System.Windows.Forms.Button();
+            this.btAddMusic = new System.Windows.Forms.Button();
+            this.lvMusic = new System.Windows.Forms.ListView();
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabPicture = new System.Windows.Forms.TabPage();
+            this.btDelPic = new System.Windows.Forms.Button();
+            this.btAddPic = new System.Windows.Forms.Button();
+            this.lvPicture = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabProgram = new System.Windows.Forms.TabPage();
+            this.btDelApp = new System.Windows.Forms.Button();
+            this.btAddApp = new System.Windows.Forms.Button();
+            this.lvProgram = new System.Windows.Forms.ListView();
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabVideo = new System.Windows.Forms.TabPage();
+            this.btDelVid = new System.Windows.Forms.Button();
+            this.btAddVid = new System.Windows.Forms.Button();
+            this.lvVideo = new System.Windows.Forms.ListView();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txtAddDoc = new System.Windows.Forms.TextBox();
+            this.txtAddMusic = new System.Windows.Forms.TextBox();
+            this.txtAddPic = new System.Windows.Forms.TextBox();
+            this.txtAddApp = new System.Windows.Forms.TextBox();
+            this.txtAddVid = new System.Windows.Forms.TextBox();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabDocument.SuspendLayout();
             this.tabMusic.SuspendLayout();
@@ -78,8 +88,9 @@
             // 
             // tabDocument
             // 
-            this.tabDocument.Controls.Add(this.button2);
-            this.tabDocument.Controls.Add(this.btAdd);
+            this.tabDocument.Controls.Add(this.txtAddDoc);
+            this.tabDocument.Controls.Add(this.btDelDoc);
+            this.tabDocument.Controls.Add(this.btAddDoc);
             this.tabDocument.Controls.Add(this.lvDocument);
             this.tabDocument.Location = new System.Drawing.Point(4, 22);
             this.tabDocument.Name = "tabDocument";
@@ -89,41 +100,50 @@
             this.tabDocument.Text = "Documents";
             this.tabDocument.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btDelDoc
             // 
-            this.button2.Location = new System.Drawing.Point(221, 35);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btDelDoc.Location = new System.Drawing.Point(221, 35);
+            this.btDelDoc.Name = "btDelDoc";
+            this.btDelDoc.Size = new System.Drawing.Size(75, 23);
+            this.btDelDoc.TabIndex = 2;
+            this.btDelDoc.Text = "Delete";
+            this.btDelDoc.UseVisualStyleBackColor = true;
+            this.btDelDoc.Click += new System.EventHandler(this.btDelDoc_Click);
             // 
-            // btAdd
+            // btAddDoc
             // 
-            this.btAdd.Location = new System.Drawing.Point(221, 6);
-            this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(75, 23);
-            this.btAdd.TabIndex = 1;
-            this.btAdd.Text = "Add";
-            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAddDoc.Location = new System.Drawing.Point(221, 6);
+            this.btAddDoc.Name = "btAddDoc";
+            this.btAddDoc.Size = new System.Drawing.Size(75, 23);
+            this.btAddDoc.TabIndex = 1;
+            this.btAddDoc.Text = "Add";
+            this.btAddDoc.UseVisualStyleBackColor = true;
+            this.btAddDoc.Click += new System.EventHandler(this.btAddDoc_Click);
             // 
             // lvDocument
             // 
             this.lvDocument.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader6,
             this.columnHeader1});
             this.lvDocument.FullRowSelect = true;
             this.lvDocument.GridLines = true;
             this.lvDocument.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.lvDocument.Location = new System.Drawing.Point(6, 6);
+            this.lvDocument.Location = new System.Drawing.Point(6, 35);
             this.lvDocument.Name = "lvDocument";
-            this.lvDocument.Size = new System.Drawing.Size(209, 249);
+            this.lvDocument.Size = new System.Drawing.Size(209, 220);
             this.lvDocument.TabIndex = 0;
             this.lvDocument.UseCompatibleStateImageBehavior = false;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Extension";
+            this.columnHeader1.Width = 205;
+            // 
             // tabMusic
             // 
-            this.tabMusic.Controls.Add(this.button1);
-            this.tabMusic.Controls.Add(this.button3);
+            this.tabMusic.Controls.Add(this.txtAddMusic);
+            this.tabMusic.Controls.Add(this.btDelMusic);
+            this.tabMusic.Controls.Add(this.btAddMusic);
             this.tabMusic.Controls.Add(this.lvMusic);
             this.tabMusic.Location = new System.Drawing.Point(4, 22);
             this.tabMusic.Name = "tabMusic";
@@ -133,41 +153,50 @@
             this.tabMusic.Text = "Musics";
             this.tabMusic.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btDelMusic
             // 
-            this.button1.Location = new System.Drawing.Point(221, 35);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Delete";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btDelMusic.Location = new System.Drawing.Point(221, 35);
+            this.btDelMusic.Name = "btDelMusic";
+            this.btDelMusic.Size = new System.Drawing.Size(75, 23);
+            this.btDelMusic.TabIndex = 4;
+            this.btDelMusic.Text = "Delete";
+            this.btDelMusic.UseVisualStyleBackColor = true;
+            this.btDelMusic.Click += new System.EventHandler(this.btDelMusic_Click);
             // 
-            // button3
+            // btAddMusic
             // 
-            this.button3.Location = new System.Drawing.Point(221, 6);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Add";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btAddMusic.Location = new System.Drawing.Point(221, 6);
+            this.btAddMusic.Name = "btAddMusic";
+            this.btAddMusic.Size = new System.Drawing.Size(75, 23);
+            this.btAddMusic.TabIndex = 3;
+            this.btAddMusic.Text = "Add";
+            this.btAddMusic.UseVisualStyleBackColor = true;
+            this.btAddMusic.Click += new System.EventHandler(this.btAddMusic_Click);
             // 
             // lvMusic
             // 
             this.lvMusic.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader7,
             this.columnHeader2});
             this.lvMusic.FullRowSelect = true;
             this.lvMusic.GridLines = true;
             this.lvMusic.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.lvMusic.Location = new System.Drawing.Point(6, 6);
+            this.lvMusic.Location = new System.Drawing.Point(6, 35);
             this.lvMusic.Name = "lvMusic";
-            this.lvMusic.Size = new System.Drawing.Size(209, 249);
+            this.lvMusic.Size = new System.Drawing.Size(209, 220);
             this.lvMusic.TabIndex = 1;
             this.lvMusic.UseCompatibleStateImageBehavior = false;
             // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Extension";
+            this.columnHeader2.Width = 205;
+            // 
             // tabPicture
             // 
-            this.tabPicture.Controls.Add(this.button4);
-            this.tabPicture.Controls.Add(this.button5);
+            this.tabPicture.Controls.Add(this.txtAddPic);
+            this.tabPicture.Controls.Add(this.btDelPic);
+            this.tabPicture.Controls.Add(this.btAddPic);
             this.tabPicture.Controls.Add(this.lvPicture);
             this.tabPicture.Location = new System.Drawing.Point(4, 22);
             this.tabPicture.Name = "tabPicture";
@@ -177,41 +206,50 @@
             this.tabPicture.Text = "Pictures";
             this.tabPicture.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btDelPic
             // 
-            this.button4.Location = new System.Drawing.Point(221, 35);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Delete";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btDelPic.Location = new System.Drawing.Point(221, 35);
+            this.btDelPic.Name = "btDelPic";
+            this.btDelPic.Size = new System.Drawing.Size(75, 23);
+            this.btDelPic.TabIndex = 6;
+            this.btDelPic.Text = "Delete";
+            this.btDelPic.UseVisualStyleBackColor = true;
+            this.btDelPic.Click += new System.EventHandler(this.btDelPic_Click);
             // 
-            // button5
+            // btAddPic
             // 
-            this.button5.Location = new System.Drawing.Point(221, 6);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Add";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btAddPic.Location = new System.Drawing.Point(221, 6);
+            this.btAddPic.Name = "btAddPic";
+            this.btAddPic.Size = new System.Drawing.Size(75, 23);
+            this.btAddPic.TabIndex = 5;
+            this.btAddPic.Text = "Add";
+            this.btAddPic.UseVisualStyleBackColor = true;
+            this.btAddPic.Click += new System.EventHandler(this.btAddPic_Click);
             // 
             // lvPicture
             // 
             this.lvPicture.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader8,
             this.columnHeader3});
             this.lvPicture.FullRowSelect = true;
             this.lvPicture.GridLines = true;
             this.lvPicture.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.lvPicture.Location = new System.Drawing.Point(6, 6);
+            this.lvPicture.Location = new System.Drawing.Point(6, 35);
             this.lvPicture.Name = "lvPicture";
-            this.lvPicture.Size = new System.Drawing.Size(209, 249);
+            this.lvPicture.Size = new System.Drawing.Size(209, 220);
             this.lvPicture.TabIndex = 2;
             this.lvPicture.UseCompatibleStateImageBehavior = false;
             // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Extension";
+            this.columnHeader3.Width = 205;
+            // 
             // tabProgram
             // 
-            this.tabProgram.Controls.Add(this.button6);
-            this.tabProgram.Controls.Add(this.button7);
+            this.tabProgram.Controls.Add(this.txtAddApp);
+            this.tabProgram.Controls.Add(this.btDelApp);
+            this.tabProgram.Controls.Add(this.btAddApp);
             this.tabProgram.Controls.Add(this.lvProgram);
             this.tabProgram.Location = new System.Drawing.Point(4, 22);
             this.tabProgram.Name = "tabProgram";
@@ -221,41 +259,50 @@
             this.tabProgram.Text = "Programs";
             this.tabProgram.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btDelApp
             // 
-            this.button6.Location = new System.Drawing.Point(221, 35);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Delete";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btDelApp.Location = new System.Drawing.Point(221, 35);
+            this.btDelApp.Name = "btDelApp";
+            this.btDelApp.Size = new System.Drawing.Size(75, 23);
+            this.btDelApp.TabIndex = 6;
+            this.btDelApp.Text = "Delete";
+            this.btDelApp.UseVisualStyleBackColor = true;
+            this.btDelApp.Click += new System.EventHandler(this.btDelApp_Click);
             // 
-            // button7
+            // btAddApp
             // 
-            this.button7.Location = new System.Drawing.Point(221, 6);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 5;
-            this.button7.Text = "Add";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btAddApp.Location = new System.Drawing.Point(221, 6);
+            this.btAddApp.Name = "btAddApp";
+            this.btAddApp.Size = new System.Drawing.Size(75, 23);
+            this.btAddApp.TabIndex = 5;
+            this.btAddApp.Text = "Add";
+            this.btAddApp.UseVisualStyleBackColor = true;
+            this.btAddApp.Click += new System.EventHandler(this.btAddApp_Click);
             // 
             // lvProgram
             // 
             this.lvProgram.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader9,
             this.columnHeader4});
             this.lvProgram.FullRowSelect = true;
             this.lvProgram.GridLines = true;
             this.lvProgram.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.lvProgram.Location = new System.Drawing.Point(6, 6);
+            this.lvProgram.Location = new System.Drawing.Point(6, 35);
             this.lvProgram.Name = "lvProgram";
-            this.lvProgram.Size = new System.Drawing.Size(209, 249);
+            this.lvProgram.Size = new System.Drawing.Size(209, 220);
             this.lvProgram.TabIndex = 2;
             this.lvProgram.UseCompatibleStateImageBehavior = false;
             // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Extension";
+            this.columnHeader4.Width = 205;
+            // 
             // tabVideo
             // 
-            this.tabVideo.Controls.Add(this.button8);
-            this.tabVideo.Controls.Add(this.button9);
+            this.tabVideo.Controls.Add(this.txtAddVid);
+            this.tabVideo.Controls.Add(this.btDelVid);
+            this.tabVideo.Controls.Add(this.btAddVid);
             this.tabVideo.Controls.Add(this.lvVideo);
             this.tabVideo.Location = new System.Drawing.Point(4, 22);
             this.tabVideo.Name = "tabVideo";
@@ -265,61 +312,104 @@
             this.tabVideo.Text = "Videos";
             this.tabVideo.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btDelVid
             // 
-            this.button8.Location = new System.Drawing.Point(221, 35);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 6;
-            this.button8.Text = "Delete";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btDelVid.Location = new System.Drawing.Point(221, 35);
+            this.btDelVid.Name = "btDelVid";
+            this.btDelVid.Size = new System.Drawing.Size(75, 23);
+            this.btDelVid.TabIndex = 6;
+            this.btDelVid.Text = "Delete";
+            this.btDelVid.UseVisualStyleBackColor = true;
+            this.btDelVid.Click += new System.EventHandler(this.btDelVid_Click);
             // 
-            // button9
+            // btAddVid
             // 
-            this.button9.Location = new System.Drawing.Point(221, 6);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 5;
-            this.button9.Text = "Add";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btAddVid.Location = new System.Drawing.Point(221, 6);
+            this.btAddVid.Name = "btAddVid";
+            this.btAddVid.Size = new System.Drawing.Size(75, 23);
+            this.btAddVid.TabIndex = 5;
+            this.btAddVid.Text = "Add";
+            this.btAddVid.UseVisualStyleBackColor = true;
+            this.btAddVid.Click += new System.EventHandler(this.btAddVid_Click);
             // 
             // lvVideo
             // 
             this.lvVideo.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader10,
             this.columnHeader5});
             this.lvVideo.FullRowSelect = true;
             this.lvVideo.GridLines = true;
             this.lvVideo.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.lvVideo.Location = new System.Drawing.Point(6, 6);
+            this.lvVideo.Location = new System.Drawing.Point(6, 35);
             this.lvVideo.Name = "lvVideo";
-            this.lvVideo.Size = new System.Drawing.Size(209, 249);
+            this.lvVideo.Size = new System.Drawing.Size(209, 220);
             this.lvVideo.TabIndex = 2;
             this.lvVideo.UseCompatibleStateImageBehavior = false;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Extension";
-            this.columnHeader1.Width = 205;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Extension";
-            this.columnHeader2.Width = 205;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Extension";
-            this.columnHeader3.Width = 205;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Extension";
-            this.columnHeader4.Width = 205;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Extension";
             this.columnHeader5.Width = 205;
+            // 
+            // txtAddDoc
+            // 
+            this.txtAddDoc.Location = new System.Drawing.Point(6, 8);
+            this.txtAddDoc.Name = "txtAddDoc";
+            this.txtAddDoc.Size = new System.Drawing.Size(209, 20);
+            this.txtAddDoc.TabIndex = 3;
+            // 
+            // txtAddMusic
+            // 
+            this.txtAddMusic.Location = new System.Drawing.Point(6, 8);
+            this.txtAddMusic.Name = "txtAddMusic";
+            this.txtAddMusic.Size = new System.Drawing.Size(209, 20);
+            this.txtAddMusic.TabIndex = 5;
+            // 
+            // txtAddPic
+            // 
+            this.txtAddPic.Location = new System.Drawing.Point(6, 8);
+            this.txtAddPic.Name = "txtAddPic";
+            this.txtAddPic.Size = new System.Drawing.Size(209, 20);
+            this.txtAddPic.TabIndex = 7;
+            // 
+            // txtAddApp
+            // 
+            this.txtAddApp.Location = new System.Drawing.Point(6, 8);
+            this.txtAddApp.Name = "txtAddApp";
+            this.txtAddApp.Size = new System.Drawing.Size(209, 20);
+            this.txtAddApp.TabIndex = 7;
+            // 
+            // txtAddVid
+            // 
+            this.txtAddVid.Location = new System.Drawing.Point(6, 8);
+            this.txtAddVid.Name = "txtAddVid";
+            this.txtAddVid.Size = new System.Drawing.Size(209, 20);
+            this.txtAddVid.TabIndex = 7;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "ID";
+            this.columnHeader6.Width = 0;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "ID";
+            this.columnHeader7.Width = 0;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "ID";
+            this.columnHeader8.Width = 0;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "ID";
+            this.columnHeader9.Width = 0;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "ID";
+            this.columnHeader10.Width = 0;
             // 
             // SettingForm
             // 
@@ -338,10 +428,15 @@
             this.Load += new System.EventHandler(this.SettingForm_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabDocument.ResumeLayout(false);
+            this.tabDocument.PerformLayout();
             this.tabMusic.ResumeLayout(false);
+            this.tabMusic.PerformLayout();
             this.tabPicture.ResumeLayout(false);
+            this.tabPicture.PerformLayout();
             this.tabProgram.ResumeLayout(false);
+            this.tabProgram.PerformLayout();
             this.tabVideo.ResumeLayout(false);
+            this.tabVideo.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -354,26 +449,36 @@
         private System.Windows.Forms.TabPage tabPicture;
         private System.Windows.Forms.TabPage tabProgram;
         private System.Windows.Forms.TabPage tabVideo;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btAdd;
+        private System.Windows.Forms.Button btDelDoc;
+        private System.Windows.Forms.Button btAddDoc;
         private System.Windows.Forms.ListView lvDocument;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btDelMusic;
+        private System.Windows.Forms.Button btAddMusic;
         private System.Windows.Forms.ListView lvMusic;
         private System.Windows.Forms.ListView lvPicture;
         private System.Windows.Forms.ListView lvProgram;
         private System.Windows.Forms.ListView lvVideo;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btDelPic;
+        private System.Windows.Forms.Button btAddPic;
+        private System.Windows.Forms.Button btDelApp;
+        private System.Windows.Forms.Button btAddApp;
+        private System.Windows.Forms.Button btDelVid;
+        private System.Windows.Forms.Button btAddVid;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.TextBox txtAddDoc;
+        private System.Windows.Forms.TextBox txtAddMusic;
+        private System.Windows.Forms.TextBox txtAddPic;
+        private System.Windows.Forms.TextBox txtAddApp;
+        private System.Windows.Forms.TextBox txtAddVid;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
 
     }
 }
