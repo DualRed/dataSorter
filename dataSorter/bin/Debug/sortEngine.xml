@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SortEngine>
+  <docSort ID="1">
+    <Extension>.doc</Extension>
+  </docSort>
+  <musicSort ID="2">
+    <Extension>.mp3</Extension>
+  </musicSort>
+  <musicSort ID="99">
+    <Extension>.ogg</Extension>
+  </musicSort>
+  <videoSort ID="5">
+    <Extension>.mp4</Extension>
+  </videoSort>
+  <pictureSort ID="3">
+    <Extension>.png</Extension>
+  </pictureSort>
+  <pictureSort ID="7">
+    <Extension>.jpg</Extension>
+  </pictureSort>
+  <pictureSort ID="8">
+    <Extension>.jepg</Extension>
+  </pictureSort>
+  <appSort ID="4">
+    <Extension>.exe</Extension>
+  </appSort>
+  <musicSort ID="199931202132335">
+    <Extension>.flac</Extension>
+  </musicSort>
+  <videoSort ID="199931202132535">
+    <Extension>.wav</Extension>
+  </videoSort>
+  <appSort ID="199931202132535">
+    <Extension>.msi</Extension>
+  </appSort>
+  <musicSort ID="199931202132726">
+    <Extension>.mov</Extension>
+  </musicSort>
+  <appSort ID="199931202132726">
+    <Extension>.rar</Extension>
+  </appSort>
+  <videoSort ID="199931202132726">
+    <Extension>.mov</Extension>
+  </videoSort>
+  <pictureSort ID="199931202114947">
+    <Extension>.jpeg</Extension>
+  </pictureSort>
+  <docSort ID="199931202115745">
+    <Extension></Extension>
+  </docSort>
+</SortEngine>
