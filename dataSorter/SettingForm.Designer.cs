@@ -31,40 +31,40 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabDocument = new System.Windows.Forms.TabPage();
+            this.txtAddDoc = new System.Windows.Forms.TextBox();
             this.btDelDoc = new System.Windows.Forms.Button();
             this.btAddDoc = new System.Windows.Forms.Button();
             this.lvDocument = new System.Windows.Forms.ListView();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabMusic = new System.Windows.Forms.TabPage();
+            this.txtAddMusic = new System.Windows.Forms.TextBox();
             this.btDelMusic = new System.Windows.Forms.Button();
             this.btAddMusic = new System.Windows.Forms.Button();
             this.lvMusic = new System.Windows.Forms.ListView();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPicture = new System.Windows.Forms.TabPage();
+            this.txtAddPic = new System.Windows.Forms.TextBox();
             this.btDelPic = new System.Windows.Forms.Button();
             this.btAddPic = new System.Windows.Forms.Button();
             this.lvPicture = new System.Windows.Forms.ListView();
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabProgram = new System.Windows.Forms.TabPage();
+            this.txtAddApp = new System.Windows.Forms.TextBox();
             this.btDelApp = new System.Windows.Forms.Button();
             this.btAddApp = new System.Windows.Forms.Button();
             this.lvProgram = new System.Windows.Forms.ListView();
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabVideo = new System.Windows.Forms.TabPage();
+            this.txtAddVid = new System.Windows.Forms.TextBox();
             this.btDelVid = new System.Windows.Forms.Button();
             this.btAddVid = new System.Windows.Forms.Button();
             this.lvVideo = new System.Windows.Forms.ListView();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.txtAddDoc = new System.Windows.Forms.TextBox();
-            this.txtAddMusic = new System.Windows.Forms.TextBox();
-            this.txtAddPic = new System.Windows.Forms.TextBox();
-            this.txtAddApp = new System.Windows.Forms.TextBox();
-            this.txtAddVid = new System.Windows.Forms.TextBox();
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabDocument.SuspendLayout();
             this.tabMusic.SuspendLayout();
@@ -100,6 +100,13 @@
             this.tabDocument.Text = "Documents";
             this.tabDocument.UseVisualStyleBackColor = true;
             // 
+            // txtAddDoc
+            // 
+            this.txtAddDoc.Location = new System.Drawing.Point(6, 8);
+            this.txtAddDoc.Name = "txtAddDoc";
+            this.txtAddDoc.Size = new System.Drawing.Size(209, 20);
+            this.txtAddDoc.TabIndex = 3;
+            // 
             // btDelDoc
             // 
             this.btDelDoc.Location = new System.Drawing.Point(221, 35);
@@ -133,6 +140,12 @@
             this.lvDocument.Size = new System.Drawing.Size(209, 220);
             this.lvDocument.TabIndex = 0;
             this.lvDocument.UseCompatibleStateImageBehavior = false;
+            this.lvDocument.SelectedIndexChanged += new System.EventHandler(this.lvDocument_SelectedIndexChanged);
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "ID";
+            this.columnHeader6.Width = 0;
             // 
             // columnHeader1
             // 
@@ -152,6 +165,13 @@
             this.tabMusic.TabIndex = 1;
             this.tabMusic.Text = "Musics";
             this.tabMusic.UseVisualStyleBackColor = true;
+            // 
+            // txtAddMusic
+            // 
+            this.txtAddMusic.Location = new System.Drawing.Point(6, 8);
+            this.txtAddMusic.Name = "txtAddMusic";
+            this.txtAddMusic.Size = new System.Drawing.Size(209, 20);
+            this.txtAddMusic.TabIndex = 5;
             // 
             // btDelMusic
             // 
@@ -186,6 +206,12 @@
             this.lvMusic.Size = new System.Drawing.Size(209, 220);
             this.lvMusic.TabIndex = 1;
             this.lvMusic.UseCompatibleStateImageBehavior = false;
+            this.lvMusic.SelectedIndexChanged += new System.EventHandler(this.lvMusic_SelectedIndexChanged);
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "ID";
+            this.columnHeader7.Width = 0;
             // 
             // columnHeader2
             // 
@@ -205,6 +231,13 @@
             this.tabPicture.TabIndex = 2;
             this.tabPicture.Text = "Pictures";
             this.tabPicture.UseVisualStyleBackColor = true;
+            // 
+            // txtAddPic
+            // 
+            this.txtAddPic.Location = new System.Drawing.Point(6, 8);
+            this.txtAddPic.Name = "txtAddPic";
+            this.txtAddPic.Size = new System.Drawing.Size(209, 20);
+            this.txtAddPic.TabIndex = 7;
             // 
             // btDelPic
             // 
@@ -239,6 +272,12 @@
             this.lvPicture.Size = new System.Drawing.Size(209, 220);
             this.lvPicture.TabIndex = 2;
             this.lvPicture.UseCompatibleStateImageBehavior = false;
+            this.lvPicture.SelectedIndexChanged += new System.EventHandler(this.lvPicture_SelectedIndexChanged);
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "ID";
+            this.columnHeader8.Width = 0;
             // 
             // columnHeader3
             // 
@@ -258,6 +297,13 @@
             this.tabProgram.TabIndex = 3;
             this.tabProgram.Text = "Programs";
             this.tabProgram.UseVisualStyleBackColor = true;
+            // 
+            // txtAddApp
+            // 
+            this.txtAddApp.Location = new System.Drawing.Point(6, 8);
+            this.txtAddApp.Name = "txtAddApp";
+            this.txtAddApp.Size = new System.Drawing.Size(209, 20);
+            this.txtAddApp.TabIndex = 7;
             // 
             // btDelApp
             // 
@@ -292,6 +338,12 @@
             this.lvProgram.Size = new System.Drawing.Size(209, 220);
             this.lvProgram.TabIndex = 2;
             this.lvProgram.UseCompatibleStateImageBehavior = false;
+            this.lvProgram.SelectedIndexChanged += new System.EventHandler(this.lvProgram_SelectedIndexChanged);
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "ID";
+            this.columnHeader9.Width = 0;
             // 
             // columnHeader4
             // 
@@ -311,6 +363,13 @@
             this.tabVideo.TabIndex = 4;
             this.tabVideo.Text = "Videos";
             this.tabVideo.UseVisualStyleBackColor = true;
+            // 
+            // txtAddVid
+            // 
+            this.txtAddVid.Location = new System.Drawing.Point(6, 8);
+            this.txtAddVid.Name = "txtAddVid";
+            this.txtAddVid.Size = new System.Drawing.Size(209, 20);
+            this.txtAddVid.TabIndex = 7;
             // 
             // btDelVid
             // 
@@ -345,71 +404,17 @@
             this.lvVideo.Size = new System.Drawing.Size(209, 220);
             this.lvVideo.TabIndex = 2;
             this.lvVideo.UseCompatibleStateImageBehavior = false;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Extension";
-            this.columnHeader5.Width = 205;
-            // 
-            // txtAddDoc
-            // 
-            this.txtAddDoc.Location = new System.Drawing.Point(6, 8);
-            this.txtAddDoc.Name = "txtAddDoc";
-            this.txtAddDoc.Size = new System.Drawing.Size(209, 20);
-            this.txtAddDoc.TabIndex = 3;
-            // 
-            // txtAddMusic
-            // 
-            this.txtAddMusic.Location = new System.Drawing.Point(6, 8);
-            this.txtAddMusic.Name = "txtAddMusic";
-            this.txtAddMusic.Size = new System.Drawing.Size(209, 20);
-            this.txtAddMusic.TabIndex = 5;
-            // 
-            // txtAddPic
-            // 
-            this.txtAddPic.Location = new System.Drawing.Point(6, 8);
-            this.txtAddPic.Name = "txtAddPic";
-            this.txtAddPic.Size = new System.Drawing.Size(209, 20);
-            this.txtAddPic.TabIndex = 7;
-            // 
-            // txtAddApp
-            // 
-            this.txtAddApp.Location = new System.Drawing.Point(6, 8);
-            this.txtAddApp.Name = "txtAddApp";
-            this.txtAddApp.Size = new System.Drawing.Size(209, 20);
-            this.txtAddApp.TabIndex = 7;
-            // 
-            // txtAddVid
-            // 
-            this.txtAddVid.Location = new System.Drawing.Point(6, 8);
-            this.txtAddVid.Name = "txtAddVid";
-            this.txtAddVid.Size = new System.Drawing.Size(209, 20);
-            this.txtAddVid.TabIndex = 7;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "ID";
-            this.columnHeader6.Width = 0;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "ID";
-            this.columnHeader7.Width = 0;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "ID";
-            this.columnHeader8.Width = 0;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "ID";
-            this.columnHeader9.Width = 0;
+            this.lvVideo.SelectedIndexChanged += new System.EventHandler(this.lvVideo_SelectedIndexChanged);
             // 
             // columnHeader10
             // 
             this.columnHeader10.Text = "ID";
             this.columnHeader10.Width = 0;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Extension";
+            this.columnHeader5.Width = 205;
             // 
             // SettingForm
             // 

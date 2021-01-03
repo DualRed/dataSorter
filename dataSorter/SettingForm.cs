@@ -22,6 +22,8 @@ namespace dataSorter
         string min = DateTime.Now.Minute.ToString();
         string sec = DateTime.Now.Second.ToString();
 
+        string docID, musicID, picID, appID, vidID;
+
         public SettingForm()
         {
             InitializeComponent();
@@ -237,27 +239,157 @@ namespace dataSorter
 
         private void btDelDoc_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (docID != "1")
+                {
+                    XDocument delEngine = XDocument.Load(path);
+                    XElement delExtension = delEngine.Descendants("docSort").Where(c => c.Attribute("ID").Value.Equals(docID)).FirstOrDefault();
+                    delExtension.Remove();
+                    delEngine.Save(path);
+                    loadData();
+                    txtAddDoc.Clear();
+                }
+                else
+                    MessageBox.Show("Default value please don't delete it!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void btDelMusic_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (musicID != "2")
+                {
+                    XDocument delEngine = XDocument.Load(path);
+                    XElement delExtension = delEngine.Descendants("musicSort").Where(c => c.Attribute("ID").Value.Equals(musicID)).FirstOrDefault();
+                    delExtension.Remove();
+                    delEngine.Save(path);
+                    loadData();
+                    txtAddMusic.Clear();
+                }
+                else
+                    MessageBox.Show("Default value please don't delete it!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void btDelPic_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (picID != "3")
+                {
+                    XDocument delEngine = XDocument.Load(path);
+                    XElement delExtension = delEngine.Descendants("pictureSort").Where(c => c.Attribute("ID").Value.Equals(picID)).FirstOrDefault();
+                    delExtension.Remove();
+                    delEngine.Save(path);
+                    loadData();
+                    txtAddPic.Clear();
+                }
+                else
+                    MessageBox.Show("Default value please don't delete it!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void btDelApp_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (appID != "4")
+                {
+                    XDocument delEngine = XDocument.Load(path);
+                    XElement delExtension = delEngine.Descendants("appSort").Where(c => c.Attribute("ID").Value.Equals(appID)).FirstOrDefault();
+                    delExtension.Remove();
+                    delEngine.Save(path);
+                    loadData();
+                    txtAddApp.Clear();
+                }
+                else
+                    MessageBox.Show("Default value please don't delete it!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void btDelVid_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (vidID != "5")
+                {
+                    XDocument delEngine = XDocument.Load(path);
+                    XElement delExtension = delEngine.Descendants("videoSort").Where(c => c.Attribute("ID").Value.Equals(vidID)).FirstOrDefault();
+                    delExtension.Remove();
+                    delEngine.Save(path);
+                    loadData();
+                    txtAddVid.Clear();
+                }
+                else
+                    MessageBox.Show("Default value please don't delete it!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+        }
 
+        private void lvDocument_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in lvDocument.SelectedItems)
+            {
+                docID = item.SubItems[0].Text;
+                txtAddDoc.Text = item.SubItems[1].Text;
+            }
+        }
+
+        private void lvMusic_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in lvMusic.SelectedItems)
+            {
+                musicID = item.SubItems[0].Text;
+                txtAddMusic.Text = item.SubItems[1].Text;
+            }
+        }
+
+        private void lvPicture_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in lvPicture.SelectedItems)
+            {
+                picID = item.SubItems[0].Text;
+                txtAddPic.Text = item.SubItems[1].Text;
+            }
+        }
+
+        private void lvProgram_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in lvProgram.SelectedItems)
+            {
+                appID = item.SubItems[0].Text;
+                txtAddApp.Text = item.SubItems[1].Text;
+            }
+        }
+
+        private void lvVideo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in lvVideo.SelectedItems)
+            {
+                vidID = item.SubItems[0].Text;
+                txtAddVid.Text = item.SubItems[1].Text;
+            }
         }
     }
 }
