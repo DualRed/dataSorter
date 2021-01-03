@@ -43,11 +43,18 @@ namespace dataSorter
             DataSet dataSetProgram = new DataSet();
             DataSet dataSetVideo = new DataSet();
 
-            dataSetDocument.ReadXml(path);
-            dataSetMusic.ReadXml(path);
-            dataSetPicture.ReadXml(path);
-            dataSetProgram.ReadXml(path);
-            dataSetVideo.ReadXml(path);
+            try
+            {
+                dataSetDocument.ReadXml(path);
+                dataSetMusic.ReadXml(path);
+                dataSetPicture.ReadXml(path);
+                dataSetProgram.ReadXml(path);
+                dataSetVideo.ReadXml(path);
+            }
+            catch
+            {
+                MessageBox.Show("sortEngine.xml is missing!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             DataTable dtDocument = new DataTable();
             DataTable dtMusic = new DataTable();
@@ -102,7 +109,7 @@ namespace dataSorter
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.Message);
+                MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -130,14 +137,19 @@ namespace dataSorter
                 long newID = Convert.ToInt64(lastExtension.Attribute("ID").Value);
                 newExtension.SetAttributeValue("ID", id);
 
-                addEngine.Element("SortEngine").Add(newExtension);
-                addEngine.Save(path);
-                loadData();
-                txtAddDoc.Clear();
+                if (txtAddDoc.Text != "")
+                {
+                    addEngine.Element("SortEngine").Add(newExtension);
+                    addEngine.Save(path);
+                    loadData();
+                    txtAddDoc.Clear();
+                }
+                else
+                    MessageBox.Show("Extension empty!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.Message);
+                MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -154,14 +166,19 @@ namespace dataSorter
                 long newID = Convert.ToInt64(lastExtension.Attribute("ID").Value);
                 newExtension.SetAttributeValue("ID", id);
 
-                addEngine.Element("SortEngine").Add(newExtension);
-                addEngine.Save(path);
-                loadData();
-                txtAddMusic.Clear();
+                if (txtAddMusic.Text != "")
+                {
+                    addEngine.Element("SortEngine").Add(newExtension);
+                    addEngine.Save(path);
+                    loadData();
+                    txtAddMusic.Clear();
+                }
+                else
+                    MessageBox.Show("Extension empty!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.Message);
+                MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -178,14 +195,19 @@ namespace dataSorter
                 long newID = Convert.ToInt64(lastExtension.Attribute("ID").Value);
                 newExtension.SetAttributeValue("ID", id);
 
-                addEngine.Element("SortEngine").Add(newExtension);
-                addEngine.Save(path);
-                loadData();
-                txtAddPic.Clear();
+                if (txtAddPic.Text != "")
+                {
+                    addEngine.Element("SortEngine").Add(newExtension);
+                    addEngine.Save(path);
+                    loadData();
+                    txtAddPic.Clear();
+                }
+                else
+                    MessageBox.Show("Extension empty!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.Message);
+                MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -202,14 +224,20 @@ namespace dataSorter
                 long newID = Convert.ToInt64(lastExtension.Attribute("ID").Value);
                 newExtension.SetAttributeValue("ID", id);
 
-                addEngine.Element("SortEngine").Add(newExtension);
-                addEngine.Save(path);
-                loadData();
-                txtAddApp.Clear();
+                if (txtAddApp.Text != "")
+                {
+                    addEngine.Element("SortEngine").Add(newExtension);
+                    addEngine.Save(path);
+                    loadData();
+                    txtAddApp.Clear();
+                }
+                else
+                    MessageBox.Show("Extension empty!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.Message);
+                MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -226,14 +254,19 @@ namespace dataSorter
                 long newID = Convert.ToInt64(lastExtension.Attribute("ID").Value);
                 newExtension.SetAttributeValue("ID", id);
 
-                addEngine.Element("SortEngine").Add(newExtension);
-                addEngine.Save(path);
-                loadData();
-                txtAddVid.Clear();
+                if (txtAddVid.Text != "")
+                {
+                    addEngine.Element("SortEngine").Add(newExtension);
+                    addEngine.Save(path);
+                    loadData();
+                    txtAddVid.Clear();
+                }
+                else
+                    MessageBox.Show("Extension empty!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.Message);
+                MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -255,7 +288,7 @@ namespace dataSorter
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.Message);
+                MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -277,7 +310,7 @@ namespace dataSorter
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.Message);
+                MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -299,7 +332,7 @@ namespace dataSorter
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.Message);
+                MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -321,7 +354,7 @@ namespace dataSorter
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.Message);
+                MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -343,7 +376,7 @@ namespace dataSorter
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.Message);
+                MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

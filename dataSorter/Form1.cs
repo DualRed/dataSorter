@@ -256,6 +256,14 @@ namespace dataSorter
             DialogResult result = MessageBox.Show("All files will moved to the folder base on extension. Are you sure?", "Please confirm!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (result == DialogResult.OK)
             {
+                lvStatus.Items.Clear();
+
+                Array.Clear(docEx, 0, docEx.Length);
+                Array.Clear(musicEx, 0, musicEx.Length);
+                Array.Clear(picEx, 0, picEx.Length);
+                Array.Clear(appEx, 0, appEx.Length);
+                Array.Clear(vidEx, 0, vidEx.Length);
+
                 sortLoader();
                 folderEngine();
                 sorterEngine();
@@ -265,6 +273,7 @@ namespace dataSorter
         private void mainForm_Load(object sender, EventArgs e)
         {
             lvStatus.View = View.Details;
+            sortLoader();
         }
 
         private void btSetting_Click(object sender, EventArgs e)
