@@ -91,7 +91,7 @@ namespace dataSorter
                             }
                             else
                             {
-                                if (file.Contains(doc))
+                                if (file.EndsWith(doc))
                                 {
                                     System.IO.File.Move(file, docPath);
                                     lvStatus.Items.Add("Moved [" + fileName + "] to [" + docName + "] folder.");
@@ -110,7 +110,7 @@ namespace dataSorter
                             }
                             else
                             {
-                                if (file.Contains(music))
+                                if (file.EndsWith(music))
                                 {
                                     System.IO.File.Move(file, musicPath);
                                     lvStatus.Items.Add("Moved [" + fileName + "] to [" + musicName + "] folder.");
@@ -129,7 +129,7 @@ namespace dataSorter
                             }
                             else
                             {
-                                if (file.Contains(pic))
+                                if (file.EndsWith(pic))
                                 {
                                     System.IO.File.Move(file, picPath);
                                     lvStatus.Items.Add("Moved [" + fileName + "] to [" + picName + "] folder.");
@@ -148,7 +148,7 @@ namespace dataSorter
                             }
                             else
                             {
-                                if (file.Contains(vid))
+                                if (file.EndsWith(vid))
                                 {
                                     System.IO.File.Move(file, vidPath);
                                     lvStatus.Items.Add("Moved [" + fileName + "] to [" + vidName + "] folder.");
@@ -167,7 +167,7 @@ namespace dataSorter
                             }
                             else
                             {
-                                if (file.Contains(app))
+                                if (file.EndsWith(app))
                                 {
                                     System.IO.File.Move(file, appPath);
                                     lvStatus.Items.Add("Moved [" + fileName + "] to [" + appName + "] folder.");

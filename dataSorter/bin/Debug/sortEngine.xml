@@ -18,9 +18,6 @@
   <pictureSort ID="7">
     <Extension>.jpg</Extension>
   </pictureSort>
-  <pictureSort ID="8">
-    <Extension>.jepg</Extension>
-  </pictureSort>
   <appSort ID="4">
     <Extension>.exe</Extension>
   </appSort>
@@ -45,7 +42,13 @@
   <pictureSort ID="199931202114947">
     <Extension>.jpeg</Extension>
   </pictureSort>
-  <docSort ID="199931202115745">
-    <Extension></Extension>
+  <appSort ID="1999412021191925">
+    <Extension>.zip</Extension>
+  </appSort>
+  <pictureSort ID="1999982021165240">
+    <Extension>.aaa</Extension>
+  </pictureSort>
+  <docSort ID="199998202117919">
+    <Extension>.docx</Extension>
   </docSort>
 </SortEngine>
